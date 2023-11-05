@@ -31,14 +31,21 @@ void Entity::Load(const json::JSON& entityNode) {
 }
 
 Component* Entity::CreateComponent(std::string _componentType) {
-	// TODO: Implement Component Creation
 	Component* component = nullptr;
 
+	// Component Creation is not currently implemented
+	_ASSERT(component != nullptr);
 	component->entity = this;
 
 	return component;
 }
 
 void Entity::RemoveComponent(Component* _component) {
+	// Remove the Component from the list of Components.
 	components.remove(_component);
+
+	// Reset the Component's entity, if we're the Entity currently set.
+	if (_component->entity == this) {
+		_component->entity = nullptr;
+	}
 }

@@ -8,7 +8,6 @@ void SceneManager::Initialize() {
 		return;
 	}
 
-	// TODO: Check if this is the intended behaviour
 	activeScene->Initialize();
 }
 
@@ -32,7 +31,6 @@ void SceneManager::Update() {
 		return;
 	}
 
-	// TODO: Check if this is the intended behaviour
 	activeScene->Update();
 }
 
@@ -88,6 +86,7 @@ void SceneManager::SetActiveScene(int _id) {
 	std::advance(scene, _id);
 
 	// TODO: Should we destroy the currently active scene, if present?
+	// activeScene->Destroy();
 
 	// Set the scene as the active scene
 	activeScene = *scene;

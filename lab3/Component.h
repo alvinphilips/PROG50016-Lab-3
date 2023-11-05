@@ -12,7 +12,11 @@ class Component : public Object {
 	friend class Entity;
 
 protected:
+	/// <summary>
+	/// The Entity this Component belongs to, if any.
+	/// </summary>
 	Entity* entity = nullptr;
+
 	Component() = default;
 	~Component() override = default;
 	void Initialize() override;
