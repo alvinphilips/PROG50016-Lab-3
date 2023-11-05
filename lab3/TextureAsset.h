@@ -7,7 +7,13 @@
 
 #include <SDL/SDL_image.h>
 
+/// <summary>
+/// A TextureAsset is an Asset that contains texture data.
+/// </summary>
 class TextureAsset final: public Asset {
+	/// <summary>
+	/// A TextureAsset contains a SDL_Texture internally.
+	/// </summary>
 	SDL_Texture* texture = nullptr;
 
 protected:
@@ -15,7 +21,14 @@ protected:
 	~TextureAsset() override = default;
 
 public:
+	/// <summary>
+	/// Load a TextureAsset.
+	/// </summary>
 	void Load(const json::JSON&) override;
+
+	/// <summary>
+	/// Destroy a TextureAsset, and free the SDL_Texture it holds.
+	/// </summary>
 	void Destroy() override;
 
 	/// <summary>

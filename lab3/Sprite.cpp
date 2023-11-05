@@ -1,15 +1,24 @@
 #include "Sprite.h"
 
-void Sprite::Destroy() {
+#include "RenderSystem.h"
+#include "Entity.h"
 
+void Sprite::Initialize() {
+	Component::Initialize();
+}
+
+void Sprite::Destroy() {
+	Component::Destroy();
+
+	texAsset = nullptr;
 }
 
 void Sprite::Update() {
-
+	// Do Nothing
 }
 
 void Sprite::Render() {
-
+	SDL_RenderCopyF(RenderSystem::Instance().GetRenderer(), texAsset->GetTexture(), &bounds, entity->GetTransform());
 }
 
 void Sprite::Load(const json::JSON& spriteNode) {

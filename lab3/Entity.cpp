@@ -32,7 +32,11 @@ void Entity::Load(const json::JSON& entityNode) {
 
 Component* Entity::CreateComponent(std::string _componentType) {
 	// TODO: Implement Component Creation
-	return nullptr;
+	Component* component = nullptr;
+
+	component->entity = this;
+
+	return component;
 }
 
 void Entity::RemoveComponent(Component* _component) {

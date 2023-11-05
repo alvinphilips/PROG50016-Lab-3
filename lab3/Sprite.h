@@ -13,13 +13,28 @@ class Sprite: public Component, public IRenderable {
 	/// Texture Asset this sprite makes use of.
 	/// </summary>
 	TextureAsset* texAsset = nullptr;
+
+	/// <summary>
+	/// The bounds of the TextureAsset the Sprite spans.
+	/// </summary>
 	SDL_Rect bounds = {0, 0, 0, 0};
+
 protected:
+	void Initialize() override;
 	void Destroy() override;
 	void Update() override;
+
+	/// <summary>
+	/// Draw a Sprite to the screen.
+	/// </summary>
 	void Render() override;
+
 public:
 	Sprite() = default;
+
+	/// <summary>
+	/// Load a Sprite.
+	/// </summary>
 	void Load(const json::JSON&) override;
 };
 

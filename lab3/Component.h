@@ -5,10 +5,14 @@
 
 #include "Object.h"
 
+// Forward-declare Entity
+class Entity;
+
 class Component : public Object {
 	friend class Entity;
 
 protected:
+	Entity* entity = nullptr;
 	Component() = default;
 	~Component() override = default;
 	void Initialize() override;
