@@ -16,9 +16,11 @@ void Engine::Destroy() {
 }
 
 void Engine::GameLoop() {
-	AssetManager::Instance().Update();
-	InputManager::Instance().Update();
-	SceneManager::Instance().Update();
-	RenderSystem::Instance().Update();
-	Time::Instance().Update();
+	while (!InputManager::Instance().shouldQuit) {
+		AssetManager::Instance().Update();
+		InputManager::Instance().Update();
+		SceneManager::Instance().Update();
+		RenderSystem::Instance().Update();
+		Time::Instance().Update();
+	}
 }

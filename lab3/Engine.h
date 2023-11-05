@@ -15,7 +15,7 @@ class Engine {
 	Engine(Engine &const) = delete;
 	Engine& operator =(Engine &const) = delete;
 public:
-	inline static Engine& Instance() {
+	static Engine& Instance() {
 		static Engine instance;
 		return instance;
 	}

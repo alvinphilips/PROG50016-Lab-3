@@ -1,7 +1,7 @@
 #include "InputManager.h"
 
 void InputManager::Initialize() {
-	// TODO: Implement
+	shouldQuit = false;
 }
 
 void InputManager::Destroy() {
@@ -10,4 +10,9 @@ void InputManager::Destroy() {
 
 void InputManager::Update() {
 	// TODO: Implement
+}
+
+bool InputManager::ShouldQuit() const
+{
+	return shouldQuit;
 }
