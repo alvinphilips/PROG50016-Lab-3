@@ -19,7 +19,7 @@ protected:
 	void Initialize();
 	void Destroy();
 	void Update();
-	void Load();
+	void Load(std::string&);
 public:
 	static RenderSystem& Instance() {
 		static RenderSystem instance;

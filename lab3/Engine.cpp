@@ -1,11 +1,12 @@
 #include "Engine.h"
 
 void Engine::Initialize() {
-	RenderSystem::Instance().Initialize();
-	AssetManager::Instance().Initialize();
 	SceneManager::Instance().Initialize();
-	InputManager::Instance().Initialize();
+	AssetManager::Instance().Initialize();
 	Time::Instance().Initialize();
+	RenderSystem::Instance().Load("RenderSettings.json");
+	RenderSystem::Instance().Initialize();
+	InputManager::Instance().Initialize();
 }
 
 void Engine::Destroy() {

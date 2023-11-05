@@ -12,7 +12,7 @@ protected:
 	Asset() = default;
 	~Asset() override = default;
 public:
-	void Load() override;
+	void Load() override = 0;
 };
 
 #endif
