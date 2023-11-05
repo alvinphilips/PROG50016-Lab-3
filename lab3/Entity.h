@@ -16,7 +16,7 @@ protected:
 	void Destroy() override;
 	virtual void Update();
 public:
-	void Load() override;
+	void Load(const json::JSON&) override;
 	Component* CreateComponent(std::string _componentType);
 	void RemoveComponent(Component* _component);
 };

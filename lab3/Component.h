@@ -10,11 +10,11 @@ class Component : public Object {
 protected:
 	Component() = default;
 	~Component() override = default;
-	void Initialize() override = 0;
-	void Destroy() override = 0;
+	void Initialize() override;
+	void Destroy() override;
 	virtual void Update() = 0;
 public:
-	void Load() override = 0;
+	void Load(const json::JSON&) override;
 };
 
 #endif

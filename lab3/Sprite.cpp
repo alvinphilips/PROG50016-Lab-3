@@ -12,6 +12,6 @@ void Sprite::Render() {
 
 }
 
-void Sprite::Load() {
+void Sprite::Load(const json::JSON& spriteNode) {
 
 }

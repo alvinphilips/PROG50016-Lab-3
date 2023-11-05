@@ -13,7 +13,7 @@ protected:
 	void Render() override;
 public:
 	Sprite() = default;
-	void Load() override;
+	void Load(const json::JSON&) override;
 };
 
 #endif

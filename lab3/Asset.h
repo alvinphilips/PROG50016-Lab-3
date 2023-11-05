@@ -12,7 +12,7 @@ protected:
 	Asset() = default;
 	~Asset() override = default;
 public:
-	void Load() override = 0;
+	void Load(const json::JSON&) override;
 };
 
 #endif

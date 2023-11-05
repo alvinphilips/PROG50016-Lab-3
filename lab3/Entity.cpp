@@ -1,6 +1,8 @@
 #include "Entity.h"
 
 void Entity::Initialize() {
+	Object::Initialize();
+
 	for (const auto& c: components) {
 		c->Initialize();
 	}
@@ -18,9 +20,13 @@ void Entity::Destroy() {
 		delete c;
 	}
 	components.clear();
+
+	Object::Destroy();
 }
 
-void Entity::Load() {
+void Entity::Load(const json::JSON& entityNode) {
+	Object::Load(entityNode);
+
 	// TODO: Implement Entity loading
 }
 
