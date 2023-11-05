@@ -16,7 +16,4 @@ void TextureAsset::Load(const json::JSON& textureAssetNode) {
 void TextureAsset::Destroy() {
 	SDL_DestroyTexture(texture);
 	texture = nullptr;
-
-	// We don't 'own' the renderer, hence we just set it to null without destroying it
-	renderer = nullptr;
 }
