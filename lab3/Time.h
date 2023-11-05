@@ -5,6 +5,9 @@
 
 #include <chrono>
 
+/// <summary>
+/// The Time class handles the progression of time according to the system clock.
+/// </summary>
 class Time {
 	friend class Engine;
 
@@ -51,9 +54,9 @@ protected:
 
 public:
 	/// <summary>
-	/// Returns the Singleton Instance of Time.
+	/// Returns the Time Singleton.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The Singleton instance of Time.</returns>
 	inline static Time& Instance() {
 		static Time instance;
 		return instance;
