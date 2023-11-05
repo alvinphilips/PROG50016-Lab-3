@@ -20,8 +20,8 @@ class RenderSystem {
 	std::list<IRenderable*> renderables;
 	RenderSystem() = default;
 	~RenderSystem() = default;
-	RenderSystem(RenderSystem &const) = delete;
-	RenderSystem& operator =(RenderSystem &const) = delete;
+	RenderSystem(RenderSystem const&) = delete;
+	RenderSystem& operator =(RenderSystem const&) = delete;
 protected:
 	void Initialize();
 	void Destroy();
@@ -31,6 +31,9 @@ public:
 	static RenderSystem& Instance() {
 		static RenderSystem instance;
 		return instance;
+	}
+	SDL_Renderer* GetRenderer() const {
+		return renderer;
 	}
 };
 

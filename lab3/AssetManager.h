@@ -13,7 +13,7 @@ class AssetManager {
 	AssetManager() = default;
 	~AssetManager() = default;
 	AssetManager(AssetManager const&) = delete;
-	AssetManager& operator =(AssetManager &const) = delete;
+	AssetManager& operator =(AssetManager const&) = delete;
 protected:
 	void Initialize();
 	void Destroy();

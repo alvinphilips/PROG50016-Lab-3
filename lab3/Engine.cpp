@@ -2,13 +2,21 @@
 #include <SDL/SDL.h>
 
 void Engine::Initialize() {
+	// Initialize SDL
 	SDL_Init(SDL_INIT_EVERYTHING);
-	SceneManager::Instance().Initialize();
-	AssetManager::Instance().Initialize();
-	Time::Instance().Initialize();
+
+	// Initialize the RenderSystem, so we have a working Window
 	RenderSystem::Instance().Load("RenderSystem.json");
 	RenderSystem::Instance().Initialize();
+
+	// Initialize Input Manager
 	InputManager::Instance().Initialize();
+
+	// Initialize Asset Manager
+	AssetManager::Instance().Initialize();
+
+	SceneManager::Instance().Initialize();
+	Time::Instance().Initialize();
 }
 
 void Engine::Destroy() {

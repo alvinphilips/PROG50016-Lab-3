@@ -5,12 +5,17 @@
 
 #include "Asset.h"
 
+#include <SDL/SDL_image.h>
+
 class TextureAsset final: public Asset {
+	SDL_Renderer* renderer = nullptr;
+	SDL_Texture* texture = nullptr;
 protected:
 	TextureAsset() = default;
 	~TextureAsset() override = default;
 public:
-	void Load() override;
+	void Load(const json::JSON&) override;
+	void Destroy() override;
 };
 
 #endif

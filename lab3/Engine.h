@@ -12,8 +12,8 @@
 class Engine {
 	Engine() = default;
 	~Engine() = default;
-	Engine(Engine &const) = delete;
-	Engine& operator =(Engine &const) = delete;
+	Engine(Engine const&) = delete;
+	Engine& operator =(Engine const&) = delete;
 public:
 	static Engine& Instance() {
 		static Engine instance;

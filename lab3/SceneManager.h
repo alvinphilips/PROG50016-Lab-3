@@ -15,8 +15,8 @@ class SceneManager {
 	Scene* activeScene = nullptr;
 	SceneManager() = default;
 	~SceneManager() = default;
-	SceneManager(SceneManager& const) = delete;
-	SceneManager& operator =(SceneManager& const) = delete;
+	SceneManager(SceneManager const&) = delete;
+	SceneManager& operator =(SceneManager const&) = delete;
 protected:
 	void Initialize();
 	void Destroy();

@@ -48,7 +48,7 @@ void SceneManager::AddScene(std::string _fileName) {
 	scenes.push_back(scene);
 
 	// Add the scene filename and ID to the map
-	_sceneNameToId.emplace(_fileName, scenes.size() - 1);
+	_sceneNameToId.emplace(_fileName, (int)scenes.size() - 1);
 }
 
 void SceneManager::RemoveScene(std::string _fileName) {

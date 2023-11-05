@@ -8,8 +8,8 @@ class InputManager {
 	bool shouldQuit = false;
 	InputManager() = default;
 	~InputManager() = default;
-	InputManager(InputManager &const) = delete;
-	InputManager& operator =(InputManager &const) = delete;
+	InputManager(InputManager const&) = delete;
+	InputManager& operator =(InputManager const&) = delete;
 protected:
 	void Initialize();
 	void Destroy();
