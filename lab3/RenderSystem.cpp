@@ -13,9 +13,13 @@ void RenderSystem::Initialize() {
 	// Create window
 	window = SDL_CreateWindow(name.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, window_flags);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+	initialized = true;
 }
 
 void RenderSystem::Destroy() {
+	_ASSERT(initialized);
+
 	SDL_DestroyRenderer(renderer);
 	renderer = nullptr;
 	SDL_DestroyWindow(window);
@@ -23,6 +27,8 @@ void RenderSystem::Destroy() {
 }
 
 void RenderSystem::Update() {
+	_ASSERT(initialized);
+
 	SDL_RenderClear(renderer);
 
 	for (auto& renderable: renderables) {

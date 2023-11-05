@@ -30,4 +30,6 @@ void Sprite::Load(const json::JSON& spriteNode) {
 			bounds.h = bounds_node.at("height").ToInt();
 		}
 	}
+
+	// TODO: Set Sprite's texAsset
 }

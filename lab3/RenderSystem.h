@@ -17,22 +17,33 @@ class RenderSystem {
 	int width = 1;
 	int height = 1;
 	bool fullscreen = false;
+	bool initialized = false;
 	std::list<IRenderable*> renderables;
+
 	RenderSystem() = default;
 	~RenderSystem() = default;
 	RenderSystem(RenderSystem const&) = delete;
 	RenderSystem& operator =(RenderSystem const&) = delete;
+
 protected:
 	void Initialize();
 	void Destroy();
 	void Update();
 	void Load(std::string);
+
 public:
 	static RenderSystem& Instance() {
 		static RenderSystem instance;
 		return instance;
 	}
+
+	/// <summary>
+	/// Get a pointer to our underlying SDL_Renderer.
+	/// We're hoping others play nice with out data.
+	/// </summary>
+	/// <returns>A pointer to an SDL_Renderer.</returns>
 	SDL_Renderer* GetRenderer() const {
+		_ASSERT(initialized);
 		return renderer;
 	}
 };
