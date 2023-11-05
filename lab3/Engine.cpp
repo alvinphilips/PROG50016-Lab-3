@@ -1,10 +1,12 @@
 #include "Engine.h"
+#include <SDL/SDL.h>
 
 void Engine::Initialize() {
+	SDL_Init(SDL_INIT_EVERYTHING);
 	SceneManager::Instance().Initialize();
 	AssetManager::Instance().Initialize();
 	Time::Instance().Initialize();
-	RenderSystem::Instance().Load("RenderSettings.json");
+	RenderSystem::Instance().Load("RenderSystem.json");
 	RenderSystem::Instance().Initialize();
 	InputManager::Instance().Initialize();
 }
@@ -14,6 +16,7 @@ void Engine::Destroy() {
 	RenderSystem::Instance().Destroy();
 	SceneManager::Instance().Destroy();
 	AssetManager::Instance().Destroy();
+	SDL_Quit();
 }
 
 void Engine::GameLoop() {

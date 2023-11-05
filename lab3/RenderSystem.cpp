@@ -3,18 +3,36 @@
 #include "utils.h"
 
 void RenderSystem::Initialize() {
-	// TODO: Implement
+	Uint32 window_flags = 0;
+
+	// Set fullscreen flag, if in full screen mode
+	if (fullscreen) {
+		window_flags |= SDL_WindowFlags::SDL_WINDOW_FULLSCREEN;
+	}
+
+	// Create window
+	window = SDL_CreateWindow(name.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, window_flags);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
 void RenderSystem::Destroy() {
-	// TODO: Implement
+	SDL_DestroyRenderer(renderer);
+	renderer = nullptr;
+	SDL_DestroyWindow(window);
+	window = nullptr;
 }
 
 void RenderSystem::Update() {
-	// TODO: Implement
+	SDL_RenderClear(renderer);
+
+	for (auto& renderable: renderables) {
+		renderable->Render();
+	}
+
+	SDL_RenderPresent(renderer);
 }
 
-void RenderSystem::Load(std::string& fileName) {
+void RenderSystem::Load(std::string fileName) {
 	const json::JSON render_settings = utils::give_me_json(fileName.c_str());
 
 	// Set the title of the window
@@ -30,7 +48,7 @@ void RenderSystem::Load(std::string& fileName) {
 		height = render_settings.at("height").ToInt();
 	}
 
-	// Set fullscreen boolean
+	// Set fullscreen flag
 	if (render_settings.hasKey("fullscreen")) {
 		fullscreen = render_settings.at("fullscreen").ToBool();
 	}

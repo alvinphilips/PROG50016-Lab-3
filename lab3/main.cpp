@@ -1,8 +1,9 @@
 #include <iostream>
 #include "Engine.h"
 
-int main()
+int main(int argc, char** argv)
 {
 	Engine::Instance().Initialize();
 	Engine::Instance().GameLoop();
+	Engine::Instance().Destroy();
 }
