@@ -6,7 +6,14 @@
 #include "Component.h"
 #include "IRenderable.h"
 
+#include "TextureAsset.h"
+
 class Sprite: public Component, public IRenderable {
+	/// <summary>
+	/// Texture Asset this sprite makes use of.
+	/// </summary>
+	TextureAsset* texAsset = nullptr;
+	SDL_Rect bounds = {0, 0, 0, 0};
 protected:
 	void Destroy() override;
 	void Update() override;
