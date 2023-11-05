@@ -6,12 +6,14 @@
 #include "Object.h"
 
 class Asset: public Object {
-	// Not provided in the UML diagram, but needed to allow Assets to be destroyed
 	friend class AssetManager;
 protected:
 	Asset() = default;
 	~Asset() override = default;
 public:
+	/// <summary>
+	/// Load an Asset.
+	/// </summary>
 	void Load(const json::JSON&) override;
 };
 
