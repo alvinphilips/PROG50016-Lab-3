@@ -33,8 +33,6 @@ Entity* Scene::CreateEntity() {
 
 void Scene::RemoveEntity(Entity* _entity) {
 	entities.remove(_entity);
-
-	// TODO: Decide if we want to destroy the data
 }
 
 Entity* Scene::FindEntityById(int id) {

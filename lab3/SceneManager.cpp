@@ -85,9 +85,6 @@ void SceneManager::SetActiveScene(int _id) {
 	auto scene = scenes.begin();
 	std::advance(scene, _id);
 
-	// TODO: Should we destroy the currently active scene, if present?
-	// activeScene->Destroy();
-
 	// Set the scene as the active scene
 	activeScene = *scene;
 }

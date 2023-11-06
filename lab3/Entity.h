@@ -5,7 +5,7 @@
 
 #include <list>
 #include "Component.h"
-#include <SDL/SDL_rect.h>
+#include "math.h"
 
 /// <summary>
 /// An Entity defines an object that is a part of the game world.
@@ -22,7 +22,7 @@ class Entity : public Object {
 	/// <summary>
 	/// The 'transform' of the Entity.
 	/// </summary>
-	SDL_FRect transform;
+	Transform transform;
 
 protected:
 	Entity() = default;
@@ -54,7 +54,7 @@ public:
 	/// Get the Entity's transform.
 	/// </summary>
 	/// <returns>A pointer to the SDL_FRect transform of the entity.</returns>
-	const SDL_FRect* GetTransform() {
+	const Transform* GetTransform() {
 		return &transform;
 	}
 };

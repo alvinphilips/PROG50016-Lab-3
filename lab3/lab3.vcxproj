@@ -157,6 +157,7 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="IRenderable.cpp" />
     <ClCompile Include="json.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="IRenderable.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="math.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="Scene.h" />

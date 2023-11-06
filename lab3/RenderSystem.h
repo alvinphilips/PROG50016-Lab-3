@@ -89,6 +89,14 @@ public:
 		_ASSERT(initialized);
 		return renderer;
 	}
+
+	void AddRenderable(IRenderable* _renderable) {
+		renderables.push_back(_renderable);
+	}
+
+	void RemoveRenderable(IRenderable* _renderable) {
+		renderables.remove(_renderable);
+	}
 };
 
 #endif

@@ -6,8 +6,8 @@
 class IRenderable {
 	friend class RenderSystem;
 protected:
-	IRenderable() = default;
-	virtual ~IRenderable() = default;
+	IRenderable();
+	virtual ~IRenderable();
 	virtual void Render() = 0;
 };
 
