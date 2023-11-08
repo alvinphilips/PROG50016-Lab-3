@@ -151,6 +151,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Asset.cpp" />
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedSprite.h" />
     <ClInclude Include="Asset.h" />
     <ClInclude Include="AssetManager.h" />
     <ClInclude Include="Component.h" />

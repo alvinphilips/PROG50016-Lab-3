@@ -9,6 +9,7 @@
 #include "TextureAsset.h"
 
 class Sprite: public Component, public IRenderable {
+protected:
 	/// <summary>
 	/// Texture Asset this sprite makes use of.
 	/// </summary>
@@ -19,7 +20,6 @@ class Sprite: public Component, public IRenderable {
 	/// </summary>
 	SDL_Rect bounds = {0, 0, 0, 0};
 
-protected:
 	void Initialize() override;
 	void Destroy() override;
 	void Update() override;

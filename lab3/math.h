@@ -82,6 +82,21 @@ inline IVec2 operator / (IVec2 const& lhs, int const& rhs) {
 	return out;
 }
 
+inline Transform operator + (Transform const& lhs, Vec2 const& rhs) {
+	Transform out = lhs;
+	out.x += rhs.x;
+	out.y += rhs.y;
+
+	return out;
+}
+
+inline Transform operator - (Transform const& lhs, Vec2 const& rhs) {
+	Transform out = lhs;
+	out.x -= rhs.x;
+	out.y -= rhs.y;
+
+	return out;
+}
 
 inline Transform& operator += (Transform& lhs, Vec2 const& rhs) {
 	lhs.x += rhs.x;
@@ -91,6 +106,36 @@ inline Transform& operator += (Transform& lhs, Vec2 const& rhs) {
 }
 
 inline Transform& operator -= (Transform& lhs, Vec2 const& rhs) {
+	lhs.x -= rhs.x;
+	lhs.y -= rhs.y;
+
+	return lhs;
+}
+
+inline SDL_Rect operator + (SDL_Rect const& lhs, IVec2 const& rhs) {
+	SDL_Rect out = lhs;
+	out.x += rhs.x;
+	out.y += rhs.y;
+
+	return out;
+}
+
+inline SDL_Rect operator - (SDL_Rect const& lhs, IVec2 const& rhs) {
+	SDL_Rect out = lhs;
+	out.x -= rhs.x;
+	out.y -= rhs.y;
+
+	return out;
+}
+
+inline SDL_Rect& operator += (SDL_Rect& lhs, IVec2 const& rhs) {
+	lhs.x += rhs.x;
+	lhs.y += rhs.y;
+
+	return lhs;
+}
+
+inline SDL_Rect& operator -= (SDL_Rect& lhs, IVec2 const& rhs) {
 	lhs.x -= rhs.x;
 	lhs.y -= rhs.y;
 
