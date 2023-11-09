@@ -4,6 +4,7 @@
 #define ANIMATED_SPRITE_H
 
 #include "Sprite.h"
+#include "math.h"
 
 /// <summary>
 /// Direction the AnimatedSprite's spritestrip is oriented in.
